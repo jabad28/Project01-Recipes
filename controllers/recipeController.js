@@ -3,14 +3,20 @@
  ************/
 var db = require('../models');
 
-// GET /api/albums
+// GET /api/recipe
 function index(req, res) {
-
+  db.Recipe.find({}, function(err, foundRecipes){
+      res.json(foundRecipes);
+  });
 
 }
 
 function create(req, res) {
-
+  console.log('body', req.body);
+  db.Recipe.create(req.body, function(err, createdRecipe){
+    console.log('createdrecipe', createdRecipe);
+    res.json(createdRecipe);
+  });
 }
 
 function show(req, res) {
