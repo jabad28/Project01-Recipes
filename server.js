@@ -37,7 +37,7 @@ app.get('/', function homepage (req, res) {
 
 app.get('/api', controllers.api.index);
 app.get('/api/recipe',controllers.recipe.index);
-// app.post('/api/recipe', controllers.recipe.create);
+app.post('/api/recipe', controllers.recipe.create);
 
 
 /**********
