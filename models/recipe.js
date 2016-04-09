@@ -6,8 +6,7 @@ var RecipeSchema = new Schema ({
   name: String,
   ingredients: String,
   directions: String,
-  madeBy: String,
-  imageUrl: String
+  madeBy: String
 });
 
 var Recipe = mongoose.model('Recipe', RecipeSchema);

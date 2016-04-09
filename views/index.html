@@ -24,11 +24,8 @@
         <h1>Joanne Abad</h1>
         <p>yo!</p>
 
-
-
       </div>
     </div>
-
 
 
      <section class="container">
@@ -44,6 +41,7 @@
          <script id="recipeTemplate" type="text/x-handlebars-template">
            <!-- one recipe -->
            <div class="row recipe">
+             <div class="row recipe" data-recipe-id="{{_id}}">
 
              <div class="col-md-10 col-md-offset-1">
                <div class="panel panel-default">
@@ -54,8 +52,8 @@
                    <div class='row'>
                      <div class="col-md-3 col-xs-12 thumbnail recipe-art">
                        <img src="images/800x800.png" alt="recipe image">
-                       <button class='btn btn-primary add-song'>Add Recipe</button>
-                       <button class='btn btn-danger delete-album'>Delete Recipe</button>
+                       <button class='btn btn-primary add-recipe'text-align='right' >Update Recipe</button>
+                       <button class='btn btn-danger delete-recipe'>Delete Recipe</button>
                      </div>
 
                      <div class="col-md-9 col-xs-12">

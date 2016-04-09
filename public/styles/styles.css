@@ -1,8 +1,8 @@
 .jumbotron {
-  background-image: url();
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #EEE;
+  background-image: url('http://static1.squarespace.com/static/5137999fe4b037a1b7ece5d5/568ed3c8a2bab85e9211c788/54bb5889e4b06fad9b9bb5cd/1421564049060/IMG_1286.jpg?format=1500w');
+  background-size: contain;
+  /*background-repeat: no-repeat;*/
+  /*color: #EEE;*/
 }
 .jumbotron .container {
   height: 200px;
