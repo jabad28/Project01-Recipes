@@ -8,7 +8,7 @@
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 
     <!-- VENDOR SCRIPTS -->
     <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
@@ -16,13 +16,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="scripts/app.js"></script>
+    <script src="../scripts/app.js"></script>
   </head>
   <body>
     <div class="jumbotron">
       <div class="container">
         <h1>Joanne Abad</h1>
         <p>yo!</p>
+
+
+
       </div>
     </div>
 
@@ -48,11 +51,11 @@
             </div>
 
             <!-- Text input-->
+
             <div class="form-group">
               <label class="col-md-4 control-label" for="ingredients">Ingredients</label>
               <div class="col-md-4">
-              <input id="textinput" name="ingredients" type="text" placeholder="" class="form-control input-md">
-
+                <textarea class="form-control" id="ingredients" name="ingredients"></textarea>
               </div>
             </div>
 
@@ -77,7 +80,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="imageUrl">Image URL</label>
               <div class="col-md-4">
-              <input id="releaseDate" name="directions" type="text" placeholder="" class="form-control input-md">
+              <input id="imageUrl" name="directions" type="text" placeholder="" class="form-control input-md">
 
               </div>
             </div>
@@ -98,6 +101,78 @@
 
      <!--   END FORM SAMPLE -->
 
+     <section class="container">
+       <div class="row">
+         <div class="col-md-10 col-md-offset-1">
+           <h2>Recipes</h2>
+         </div>
+       </div>
+       <!-- recipe! -->
+       <div id='recipes'>
+
+
+         <script id="recipeTemplate" type="text/x-handlebars-template">
+           <!-- one recipe -->
+           <div class="row recipe">
+
+             <div class="col-md-10 col-md-offset-1">
+               <div class="panel panel-default">
+                 <div class="panel-body">
+
+
+                 <!-- begin recipe internal row -->
+                   <div class='row'>
+                     <div class="col-md-3 col-xs-12 thumbnail recipe-art">
+                       <img src="images/800x800.png" alt="recipe image">
+                     </div>
+
+                     <div class="col-md-9 col-xs-12">
+                       <ul class="list-group">
+                         <li class="list-group-item">
+                           <h4 class='inline-header'>Recipe Name:</h4>
+                           <span class='recipe-name'>{{name}}</span>
+                         </li>
+
+                         <li class="list-group-item">
+                           <h4 class='inline-header'>Ingredients:</h4>
+                           <span class='ingredients-list'>{{ingredients}}</span>
+                         </li>
+
+                         <li class="list-group-item">
+                           <h4 class='inline-header'>Directions:</h4>
+                           <span class='directions-list'>{{directions}}</span>
+                         </li>
+
+                         <li class="list-group-item">
+                           <h4 class='inline-header'>Made By:</h4>
+                           <span class='madeBy-name'>{{madeBy}}</span>
+                         </li>
+
+                         <li class="list-group-item">
+                           <h4 class='inline-header'>Image Url:</h4>
+                           <span class='recipe-imageUrl'>{{imageUrl}}</span>
+                         </li>
+
+                       </ul>
+                     </div>
+
+                   </div>
+                   <!-- end of recipe internal row -->
+                 </script>
+                   <div class='panel-footer'>
+                   </div>
+
+                 </div>
+               </div>
+             </div>
+           </div>
+           <!-- end one recipe -->
+
+
+
+
+       </div>
+     </section>
 
 
   </body>

@@ -29,11 +29,11 @@ var recipeList =[
 
 db.Recipe.remove({}, function(err, recipes){
 
-  db.Recipe.create(RecipeList, function(err, recipes){
+  db.Recipe.create(recipeList, function(err, recipes){
     if (err) { return console.log('ERROR', err); }
     console.log("all recipes:", recipes);
     console.log("created", recipes.length, "recipes");
-    process.exit(); //stops seed from running
+    // process.exit(); //stops seed from running
   });
 
 });

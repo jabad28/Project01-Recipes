@@ -11,17 +11,22 @@ function index(req, res) {
 
 }
 
-function create(req, res) {
-  console.log('body', req.body);
-  db.Recipe.create(req.body, function(err, createdRecipe){
-    console.log('createdrecipe', createdRecipe);
-    res.json(createdRecipe);
-  });
-}
+// function create(req, res) {
+//   console.log('body', req.body);
+//   db.Recipe.create(req.body, function(err, createdRecipe){
+//     console.log('createdrecipe', createdRecipe);
+//     res.json(createdRecipe);
+//   });
+//
+// }
 
-function show(req, res) {
-
-}
+// function show(req, res) {
+//     db.Recipe.findById(req.params.Id, function(err, foundRecipe) {
+//       if(err) { console.log('recipesController.show error', err); }
+//       console.log('recipesController.show responding with', foundRecipe);
+//       res.json(foundRecipe);
+//     });
+// }
 
 function destroy(req, res) {
 
@@ -34,9 +39,5 @@ function update(req, res) {
 
 // export public methods here
 module.exports = {
-  index: index,
-  create: create,
-  show: show,
-  destroy: destroy,
-  update: update
+  index: index
 };

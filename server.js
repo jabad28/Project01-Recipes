@@ -1,53 +1,50 @@
+//server.js ---> SERVER!
+var express = require('express');
+var bodyParser = require('body-parser');
 
-    // SERVER-SIDE JAVASCRIPT
-
-    //require express in our app
-    var express = require('express');
-    var bodyParser = require('body-parser');
-    // generate a new express app and call it 'app'
-    var app = express();
-    app.use(bodyParser.urlencoded({ extended: false }));
-
-    // serve static files from public folder
-    app.use(express.static(__dirname + '/public'));
-
-    // We'll serve jQuery and bootstrap from a local bower cache avoiding CDNs
-    // We're placing these under /vendor to differentiate them from our own assets
-    // app.use('/vendor', express.static(__dirname + '/bower_components'));
-    //
-    // var controllers = require('./controllers');
-    // var db = require('./models');
-    /**********
-     * ROUTES *
-     **********/
-
-    /*
-     * HTML Endpoints
-     */
-
-    app.get('/', function homepage (req, res) {
-      res.sendFile(__dirname + '/views/index.html');
-    });
-
-
-    /*
-     * JSON API Endpoints
-     */
-
-    //
-    // app.get('/api', controllers.api.index);
-    //
-    // app.get('/api/recipe', controllers.recipe.index);
-
-    // app.post('/api/recipe', controllers.recipe.create);
+// calling express in app variable.
+var app = express();
 
 
 
-    /**********
-     * SERVER *
-     **********/
+/**********
+SERVER
+***********/
+// serve static files in public
+app.use(express.static(__dirname + '/public'));
 
-    // listen on port 3000
-    app.listen(process.env.PORT || 3000, function () {
-      console.log('Express server is running on http://localhost:3000/');
-    });
+// body parser config to accept our datatypes
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+console.log(" hella console logging.....");
+
+
+var controllers = require('./controllers');
+var db = require('./models');
+
+/**********
+ROUTES
+***********/
+
+
+//HTML endpoints********
+app.get('/', function homepage (req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
+//JSON API Endpoints*************
+
+
+app.get('/api', controllers.api.index);
+app.get('/api/recipe',controllers.recipe.index);
+// app.post('/api/recipe', controllers.recipe.create);
+
+
+/**********
+SERVER
+***********/
+
+//listening on port 3000
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Example app listening at http://localhost:3000/');
+});
