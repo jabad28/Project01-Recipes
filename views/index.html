@@ -41,8 +41,7 @@
          <script id="recipeTemplate" type="text/x-handlebars-template">
            <!-- one recipe -->
            <div class="row recipe">
-             <!-- <div class="row recipe" data-recipe-id="{{_id}}"> -->
-
+             <div class="row recipe" data-recipe-id="{{_id}}">
              <div class="col-md-10 col-md-offset-1">
                <div class="panel panel-default">
                  <div class="panel-body">
@@ -52,7 +51,7 @@
                    <div class='row'>
                      <div class="col-md-3 col-xs-12 thumbnail recipe-art">
                        <img src="images/800x800.png" alt="recipe image">
-                       <button class='btn btn-primary add-recipe'text-align='right' >Update Recipe</button>
+                       <button class='btn btn-primary update-recipe'>Update Recipe</button>
                        <button class='btn btn-danger delete-recipe'>Delete Recipe</button>
                      </div>
 
@@ -169,6 +168,55 @@
            </section>
 
             <!--   END FORM SAMPLE -->
+
+            <section id='comment-form' class="container">
+              <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+
+                <form class="form-horizontal">
+                  <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Add Comments</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="userName">First and Last Name</label>
+                      <div class="col-md-4">
+                      <input id="userName" name="userName" type="text" placeholder="" class="form-control input-md" required="">
+                      </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="date">Date</label>
+                      <div class="col-md-4">
+                      <input id="date" name="date" type="text" placeholder="" class="form-control input-md" required="">
+
+                      </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" for="comment">Comments</label>
+                      <div class="col-md-4">
+                        <textarea class="form-control" id="comment" name="comment"></textarea>
+                      </div>
+                    </div>
+
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton">Submit Comment</label>
+                      <div class="col-md-4">
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+              </div>
+            </section>
 
 
 
