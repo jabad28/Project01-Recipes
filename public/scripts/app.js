@@ -7,11 +7,11 @@ $(document).ready(function() {
   $.ajax({
     method: 'GET',
     url: '/api/recipe',
-    success: handleReceivedAllRecipes
+    success: handleReceivedAllRecipes,
+    // error: handleReceivedAllRecipesError
   });
-  // $('#recipe-form form').on('submit', handleRecipeSubmit);
-});
-//ends doc.ready
+  $('#recipe-form form').on('submit', handleRecipeSubmit);
+});//ends doc.ready
 
 function handleRecipeSubmit(e){
   e.preventDefault();
@@ -26,17 +26,36 @@ function handleRecipeSubmit(e){
   $(this).trigger('reset');
 }
 
+function handleFormSumbitResponse(data){
+  console.log("handleformsubmit got data", data);
+  renderRecipe(data);
+}
+
+
+
+
+});
+
+// $.ajax({
+//    url: '/api/recipe/' + recipeId,
+//    method: 'DELETE',
+//    success: handleDeleteRecipeSuccess
+//  });
+//
+// // callback after DELETE /api/recipe/:id
+// function handleDeleteRecipeSuccess(data) {
+//  var deletedRecipeId = data._id;
+//  console.log('removing the following album from the page:', deletedRecipeId);
+//  $('div[data-recipe-id=' + deletedRecipeId + ']').remove();
+//
+//  }
+
 // after GET /api/recipes
 function handleReceivedAllRecipes(json){
   console.log("handleformsubmit got data like..", json);
   json.forEach(function(recipes){
     renderRecipe(recipes);
   });
-}
-
-function handleFormSubmitResponse(data){
-  console.log("handleformsubmit got data", data);
-  renderRecipe(data);
 }
 
 
