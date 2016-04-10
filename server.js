@@ -38,10 +38,10 @@ app.get('/', function homepage (req, res) {
 
 app.get('/api', controllers.api.index);
 app.get('/api/recipe', controllers.recipe.index);
-app.get('/api/recipe/:recipeId', controllers.recipe.show);
+app.get('/api/recipe/:RecipeId', controllers.recipe.show);
 app.post('/api/recipe', controllers.recipe.create);
-app.delete('/api/recipe/:recipeId', controllers.recipe.destroy);
-app.put('/api/recipe/:recipeId', controllers.recipe.update);
+app.delete('/api/recipe/:RecipeId', controllers.recipe.destroy);
+app.put('/api/recipe/:RecipeId', controllers.recipe.update);
 
 
 

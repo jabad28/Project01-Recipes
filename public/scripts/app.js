@@ -11,7 +11,6 @@ $(document).ready(function() {
     // error: handleReceivedAllRecipesError
   });
   $('#recipe-form form').on('submit', handleRecipeSubmit);
-});//ends doc.ready
 
 function handleRecipeSubmit(e){
   e.preventDefault();
@@ -26,6 +25,7 @@ function handleRecipeSubmit(e){
   $(this).trigger('reset');
 }
 
+
 function handleFormSumbitResponse(data){
   console.log("handleFormSumbitResponse got data", data);
   renderRecipe(data);
@@ -36,11 +36,13 @@ $('#recipe-form').on('submit', function (event) {
   renderRecipe();
 
   $('#recipe').on('click', '.delete-recipe', handleDeleteRecipeClick);
-  $('#recipe').on('click', '.edit-recipe', handleRecipeEditClick);
+  $('#recipe').on('click', '.update-recipe', handleRecipeUpdateClick);
 });
 
+});//ends doc.ready
+
 // when the edit button for an recipe is clicked
-function handleRecipeEditClick(e) {
+function handleRecipeUpdateClick(e) {
   var RecipeId = $(this).closest('.recipe').data('recipe-id');
   console.log('edit recipe', RecipeId);
 }
@@ -49,6 +51,7 @@ function handleRecipeEditClick(e) {
 function handleDeleteRecipeClick(e) {
   var RecipeId = $(this).parents('.recipe').data('recipe-id');
   console.log('someone wants to delete recipe id=' + RecipeId );
+  
   $.ajax({
     url: '/api/recipe/' + RecipeId,
     method: 'DELETE',
@@ -59,7 +62,7 @@ function handleDeleteRecipeClick(e) {
 // callback after DELETE /api/recipe/:id
 function handleDeleteRecipeSuccess(data) {
   var deletedRecipeId = data._id;
-  console.log('removing recipe from the page:', deletedRecipeId);
+  console.log('remove recipe from page:', deletedRecipeId);
   $('div[data-recipe-id=' + deletedRecipeId + ']').remove();
 }
 
