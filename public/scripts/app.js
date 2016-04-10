@@ -27,11 +27,13 @@ function handleRecipeSubmit(e){
 }
 
 function handleFormSumbitResponse(data){
-  console.log("handleformsubmit got data", data);
+  console.log("handleFormSumbitResponse got data", data);
   renderRecipe(data);
 }
 
-
+$('#recipe-form').on('submit', function (event) {
+  event.preventDefault();
+  renderRecipe();
 
 
 });
@@ -52,7 +54,7 @@ function handleFormSumbitResponse(data){
 
 // after GET /api/recipes
 function handleReceivedAllRecipes(json){
-  console.log("handleformsubmit got data like..", json);
+  console.log("handleReceivedAllRecipes got data like..", json);
   json.forEach(function(recipes){
     renderRecipe(recipes);
   });

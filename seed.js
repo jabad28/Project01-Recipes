@@ -3,7 +3,7 @@ var db = require("./models");
 
 var recipeList =[
                 {
-                name: 'Baked Chicken Fajitas',
+                recipeName: 'Baked Chicken Fajitas',
                 ingredients: [
                             '3-4 Boneless skinless chicken breasts.',
                             '1-2 tsp Taco Seasoning.',
@@ -22,7 +22,7 @@ var recipeList =[
                 madeBy:  'Joanne Abad',
                 },
                 {
-                name: 'Italian Chicken Bake',
+                recipeName: 'Italian Chicken Bake',
                 ingredients:  [
                               '3-4 Boneless skinless chicken breasts',
                               '1-2 Roma tomatoes cut into 1/2″ thick slices',
@@ -39,7 +39,7 @@ var recipeList =[
                 madeBy:  'Joanne Abad',
                 },
                 {
-                name: 'Stuffed Bell peppers',
+                recipeName: 'Stuffed Bell peppers',
                 ingredients: [
                             '4 Medium to Large green or red bell peppers.',
                             '1 ½ pounds of lean ground beef.',
