@@ -33,26 +33,26 @@ function handleFormSumbitResponse(data){
 
 $('#recipe-form').on('submit', function (event) {
   event.preventDefault();
-  renderRecipe();
+  // renderRecipe();
 
 });
 
 $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
-$('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
-
+// $('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
 
 });//ends doc.ready
 
 // when the update button for an recipe is clicked
-function handleRecipeEditClick(e) {
-  var recipeId = $(this).closest('.recipes').data('recipe-id');
-  console.log('edit recipes', recipeId);
-}
+// function handleRecipeEditClick(e) {
+//   var recipeId = $(this).closest('.recipes').data('recipe-id');
+//   console.log('edit recipes', recipeId);
+// }
 
 // when a delete button for an recipe is clicked
 function handleDeleteRecipeClick(e) {
+  e.preventDefault();
   var recipeId = $(this).parents('.recipe').data('recipe-id');
-  console.log('someone wants to delete recipe id' + recipeId );
+  console.log('trying to delete recipe id' + recipeId );
 
   $.ajax({
     url: '/api/recipe/' + recipeId,
@@ -76,6 +76,7 @@ function handleReceivedAllRecipes(json){
   });
 }
 
+// this function takes a single recipe and renders it to the page
 function renderRecipe(recipe) {
   console.log('rendering recipes', recipe);
   var templateHtml = $('#recipeTemplate').html();
