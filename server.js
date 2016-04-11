@@ -47,7 +47,7 @@ app.post('/api/recipe', controllers.recipe.create);
 app.delete('/api/recipe/:RecipeId', controllers.recipe.destroy);
 app.put('/api/recipe/:RecipeId', controllers.recipe.update);
 
-app.post('/api/recipes/:recipeId/comments', controllers.recipe.create);
+app.post('/api/recipes/:recipeId/comment', controllers.comment.create);
 
 
 

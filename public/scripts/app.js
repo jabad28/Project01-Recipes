@@ -37,21 +37,6 @@ $(document).ready(function() {
 });//ends doc.ready
 
 
-function handleCommentSubmit(event){
-  event.preventDefault();
-  var formData = $(this).serialize();
-  console.log("handleCommentSubmit got comments", formData);
-}
-
-$.ajax({
-  method: 'POST',
-  url: '/api/comment/:id',
-  data: formData,
-  success: handleRecivedCommentSubmit(),
-  error: handleCommentError()
-});
-
-
 // when the update button for an recipe is clicked
 function handleRecipeEditClick(e) {
   e.preventDefault();
@@ -66,8 +51,8 @@ function handleDeleteRecipeClick(e) {
   console.log('trying to delete recipe id' + recipeId );
 
   $.ajax({
-    url: '/api/recipe/' + recipeId,
     method: 'DELETE',
+    url: '/api/recipe/' + recipeId,
     success: handleDeleteRecipeSuccess
   });
 }
@@ -94,4 +79,38 @@ function renderRecipe(recipe) {
   var templateFun = Handlebars.compile(templateHtml);
   var newHtml= templateFun(recipe);
   $('#recipes').append(newHtml);
+}
+
+
+function handleCommentSubmit(event){
+  event.preventDefault();
+  var formData = $(this).serialize();
+  console.log("handleCommentSubmit got comments", formData);
+
+$.ajax({
+  method: 'POST',
+  url: '/api/recipes/:recipeId/comment',
+  data: formData,
+  success: handleRecivedCommentSubmit,
+  error: handleErr
+});
+}
+
+function handleErr(err) {
+  console.log(err);
+}
+function handleRecivedCommentSubmit(json){
+  console.log("handleRecivedCommentSubmit got comments like..", json);
+  json.forEach(function(comment){
+    renderComment(comment);
+  });
+}
+
+// this function takes a single comment and renders it to the page
+function renderComment(comment) {
+  console.log('rendering comments', comment);
+  var templateComment = $('.comments').html();
+  var addComments = Handlebars.compile(templateComment);
+  var newComment= addComments(comment);
+  $('.comments').append(newComment);
 }
