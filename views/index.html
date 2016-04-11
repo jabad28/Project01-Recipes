@@ -51,8 +51,8 @@
                    <div class='row'>
                      <!-- <div class="col-md-3 col-xs-12 thumbnail recipe-art">
                        <img src="images/800x800.png" alt="recipe image"> -->
-                       <button class='btn btn-primary update-recipe'>Update Recipe</button>
-                       <button class='btn btn-danger delete-recipe'>Delete Recipe</button>
+                       <!-- <button class='btn btn-primary update-recipe'>Update Recipe</button>
+                       <button class='btn btn-danger delete-recipe'>Delete Recipe</button> -->
                      </div>
 
                      <div class="col-md-9 col-xs-12" id="recipeBox">
@@ -77,14 +77,15 @@
                            <span class='madeBy-name'>{{madeBy}}</span>
                          </li>
 
-                         <!-- <li class="list-group-item">
-                           <h4 class='inline-header'>Image Url:</h4>
-                           <span class='recipe-imageUrl'>{{imageUrl}}</span>
-                         </li> -->
+                         <li class="list-group-item">
+                           <h4 class='inline-header'>Comments:</h4>
+                           <span class='comments'>{{comments}}</span>
+                         </li>
 
                        </ul>
                      </div>
-
+                     <button class='btn btn-primary update-recipe'>Update Recipe</button>
+                     <button class='btn btn-danger delete-recipe'>Delete Recipe</button>
                    </div>
                    <!-- end of recipe internal row -->
                  </script>
@@ -181,9 +182,9 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                      <label class="col-md-4 control-label" for="userName">First and Last Name</label>
+                      <label class="col-md-4 control-label" for="userName">Name</label>
                       <div class="col-md-4">
-                      <input id="userName" name="userName" type="text" placeholder="" class="form-control input-md" required="">
+                      <input id="userName" name="userName" type="text" placeholder="First and Last" class="form-control input-md" required="">
                       </div>
                     </div>
 
@@ -191,7 +192,7 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="date">Date</label>
                       <div class="col-md-4">
-                      <input id="date" name="date" type="text" placeholder="" class="form-control input-md" required="">
+                      <input id="date" name="date" type="text" placeholder="XX/XX/XXXX" class="form-control input-md" required="">
 
                       </div>
                     </div>

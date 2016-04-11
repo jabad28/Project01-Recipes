@@ -10,9 +10,8 @@ $(document).ready(function() {
     success: handleReceivedAllRecipes,
     // error: handleReceivedAllRecipesError
   });
+
   $('#recipe-form form').on('submit', handleRecipeSubmit);
-  $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
-  $('#recipes').on('click', '.update-recipe', handleRecipeUpdateClick);
 
 function handleRecipeSubmit(e){
   e.preventDefault();
@@ -38,6 +37,9 @@ $('#recipe-form').on('submit', function (event) {
 
 });
 
+$('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
+$('#recipes').on('click', '.update-recipe', handleRecipeUpdateClick);
+
 
 });//ends doc.ready
 
@@ -50,7 +52,7 @@ function handleRecipeUpdateClick(e) {
 // when a delete button for an recipe is clicked
 function handleDeleteRecipeClick(e) {
   var recipeId = $(this).parents('.recipe').data('recipe-id');
-  console.log('someone wants to delete recipe id=' + recipeId );
+  console.log('someone wants to delete recipe id' + recipeId );
 
   $.ajax({
     url: '/api/recipe/' + recipeId,
