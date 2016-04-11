@@ -67,6 +67,22 @@ var recipeList =[
 ];
 
 
+var comment1 = {
+    userName: "Joanne",
+    date: "06/12/1976",
+    comment: "Hello!"
+};
+
+var comment2 = {
+    userName: "Travis",
+    date: "05/23/1987",
+    comment: "hi!"
+};
+
+
+recipeList.forEach(function(element){
+  element.comments=[comment1,comment2];
+});
 
 db.Recipe.remove({}, function(err, recipes){
 
