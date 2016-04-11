@@ -31,7 +31,6 @@ function show(req, res) {
 
 function destroy(req, res) {
   db.Recipe.findOneAndRemove({ _id: req.params.RecipeId }, function(err, foundRecipe){
-    // note you could send just send 204, but we're sending 200 and the deleted entity
     res.json(foundRecipe);
   });
 }

@@ -28,3 +28,11 @@ h1{
 p {
   text-align: center;
 }
+.carousel-wrapper{
+  align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+.carousel-inner img {
+  margin: auto;
+}
