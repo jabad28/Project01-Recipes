@@ -86,13 +86,13 @@ function handleCommentSubmit(event){
   var formData = $(this).serialize();
   console.log("handleCommentSubmit got comments", formData);
 
-$.ajax({
-  method: 'POST',
-  url: '/api/recipes/:recipeId/comment',
-  data: formData,
-  success: handleRecivedCommentSubmit,
-  error: handleErr
-});
+  $.ajax({
+    method: 'POST',
+    url: '/api/recipes/:recipeId/comment',
+    data: formData,
+    success: handleRecivedCommentSubmit,
+    error: handleErr
+  });
 }
 
 function handleErr(err) {
@@ -100,8 +100,8 @@ function handleErr(err) {
 }
 function handleRecivedCommentSubmit(json){
   console.log("handleRecivedCommentSubmit got comments like..", json);
-    renderComment(comment);
-  }
+  renderComment(json);
+}
 
 
 // this function takes a single comment and renders it to the page
