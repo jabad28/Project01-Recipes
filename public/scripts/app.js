@@ -29,13 +29,28 @@ $(document).ready(function() {
     renderRecipe(data);
   }
 
-  
-
+  $('#recipes').on('submit','.comment-form form', handleCommentSubmit);
   $('#recipe-form form').on('submit', handleRecipeSubmit);
   $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
   $('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
 
 });//ends doc.ready
+
+
+function handleCommentSubmit(event){
+  event.preventDefault();
+  var formData = $(this).serialize();
+  console.log("handleCommentSubmit got comments", formData);
+}
+
+$.ajax({
+  method: 'POST',
+  url: '/api/comment/:id',
+  data: formData,
+  success: handleRecivedCommentSubmit(),
+  error: handleCommentError()
+});
+
 
 // when the update button for an recipe is clicked
 function handleRecipeEditClick(e) {
