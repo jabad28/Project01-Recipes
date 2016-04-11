@@ -11,34 +11,29 @@ $(document).ready(function() {
     // error: handleReceivedAllRecipesError
   });
 
+  function handleRecipeSubmit(e){
+    e.preventDefault();
+    var formData = $(this).serialize();
+
+    $.ajax({
+      method: 'POST',
+      url: '/api/recipe',
+      data: formData,
+      success: handleFormSumbitResponse
+    });
+    $(this).trigger('reset');
+  }
+
+  function handleFormSumbitResponse(data){
+    console.log("handleFormSumbitResponse got data", data);
+    renderRecipe(data);
+  }
+
+  
+
   $('#recipe-form form').on('submit', handleRecipeSubmit);
-
-function handleRecipeSubmit(e){
-  e.preventDefault();
-  var formData = $(this).serialize();
-
-  $.ajax({
-    method: 'POST',
-    url: '/api/recipe',
-    data: formData,
-    success: handleFormSumbitResponse
-  });
-  $(this).trigger('reset');
-}
-
-function handleFormSumbitResponse(data){
-  console.log("handleFormSumbitResponse got data", data);
-  renderRecipe(data);
-}
-
-$('#recipe-form').on('submit', function (event) {
-  event.preventDefault();
-  // renderRecipe();
-
-});
-
-$('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
-$('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
+  $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
+  $('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
 
 });//ends doc.ready
 
