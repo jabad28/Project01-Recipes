@@ -38,13 +38,13 @@ $('#recipe-form').on('submit', function (event) {
 });
 
 $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
-$('#recipes').on('click', '.update-recipe', handleRecipeUpdateClick);
+$('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
 
 
 });//ends doc.ready
 
 // when the update button for an recipe is clicked
-function handleRecipeUpdateClick(e) {
+function handleRecipeEditClick(e) {
   var recipeId = $(this).closest('.recipes').data('recipe-id');
   console.log('edit recipes', recipeId);
 }

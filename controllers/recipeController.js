@@ -37,6 +37,18 @@ function destroy(req, res) {
 }
 
 function update(req, res) {
+  // console.log('updating with data', req.body);
+  //  db.Album.findById(req.params.RecipeId, function(err, foundRecipe) {
+  //    if(err) { console.log('recipeController.update error', err); }
+  //    foundRecipe.recipeName = req.body.recipeName;
+  //    foundRecipe.ingredients = req.body.ingredients;
+  //    foundRecipe.directions = req.body.directions;
+  //    foundRecipe.madeBy = req.body.madeBy;
+  //    foundRecipe.save(function(err, savedRecipe) {
+  //      if(err) { console.log('saving altered recipe failed'); }
+  //      res.json(savedRecipe);
+  //    });
+  //  });
 
 }
 
