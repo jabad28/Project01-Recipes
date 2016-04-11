@@ -38,15 +38,16 @@ $('#recipe-form').on('submit', function (event) {
 });
 
 $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
-// $('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
+$('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
 
 });//ends doc.ready
 
 // when the update button for an recipe is clicked
-// function handleRecipeEditClick(e) {
-//   var recipeId = $(this).closest('.recipes').data('recipe-id');
-//   console.log('edit recipes', recipeId);
-// }
+function handleRecipeEditClick(e) {
+  e.preventDefault();
+  var recipeId = $(this).closest('.recipe').data('recipe-id');
+  console.log('edit recipes', recipeId);
+}
 
 // when a delete button for an recipe is clicked
 function handleDeleteRecipeClick(e) {
