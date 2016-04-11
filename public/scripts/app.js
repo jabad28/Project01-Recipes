@@ -81,7 +81,6 @@ function renderRecipe(recipe) {
   $('#recipes').append(newHtml);
 }
 
-
 function handleCommentSubmit(event){
   event.preventDefault();
   var formData = $(this).serialize();
@@ -101,10 +100,9 @@ function handleErr(err) {
 }
 function handleRecivedCommentSubmit(json){
   console.log("handleRecivedCommentSubmit got comments like..", json);
-  json.forEach(function(comment){
     renderComment(comment);
-  });
-}
+  }
+
 
 // this function takes a single comment and renders it to the page
 function renderComment(comment) {
