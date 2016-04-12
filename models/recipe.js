@@ -10,7 +10,7 @@ var RecipeSchema = new Schema ({
   ingredients: [ String ],
   directions: [ String ],
   madeBy: String,
-  comments: [Comment.schema]
+  comment: [Comment.schema]
 });
 
 var Recipe = mongoose.model('Recipe', RecipeSchema);

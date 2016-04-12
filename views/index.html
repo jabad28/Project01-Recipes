@@ -70,8 +70,8 @@
 
 <div>
   <h1>Quick and Easy Recipes</h1>
-  <p>...Recipes...</p>
-  <p>** ADD EXPLANTION OF WEBSITE HERE! **</p>
+  <!-- <p1>...Recipes...</p1>
+  <p>** ADD EXPLANTION OF WEBSITE HERE! **</p> -->
 </div>
 
      <section class="container">
@@ -95,10 +95,6 @@
 
                  <!-- begin recipe internal row -->
                    <div class='row'>
-                     <!-- <div class="col-md-3 col-xs-12 thumbnail recipe-art">
-                       <img src="images/800x800.png" alt="recipe image"> -->
-                       <!-- <button class='btn btn-primary update-recipe'>Update Recipe</button>
-                       <button class='btn btn-danger delete-recipe'>Delete Recipe</button> -->
                      </div>
 
                      <div class="col-md-9 col-xs-12" id="recipeBox">
@@ -123,17 +119,22 @@
                            <span class='madeBy-name'>{{madeBy}}</span>
                          </li>
 
-                         <li class="list-group-item">
+                         <li class="list-group-item comment-section">
                            <h4 class='inline-header'>Comments:</h4>
-                           <span class='comments'><div>{{comments}}</div></span>
+                           <!-- {{#each comments}} -->
+                           <div class="text-left">
+                               <span class='userName'>{{userName}}</span>
+                               <div>
+                             <p class='comments'>{{comment}}</p>
+                             <span class='date'>posted on "{{date}}"</span></div>
+                           </div>
+                           <!-- {{/each}} -->
                          </li>
 
                        </ul>
                      </div>
 
-                     <!-- <button class='btn btn-primary comment-recipe'>Add Comment</button> -->
 
-                     <!-- <button class='btn btn-success save-recipe hidden'>Save Changes</button> -->
                    </div>
                    <!-- end of recipe internal row -->
                    <div class='panel-footer'>
@@ -283,6 +284,15 @@
        </div>
      </section>
 
+     <!-- comment template -->
+     <script id="commentTemplate" type="text/x-handlebars-template">
+       <div class="text-left">
+           <span class='userName'>{{userName}}</span>
+           <div>
+         <p class='comments'>{{comment}}</p>
+         <span class='date'>posted on "{{date}}"</span></div>
+       </div>
+     </script>
 
   </body>
 </html>
