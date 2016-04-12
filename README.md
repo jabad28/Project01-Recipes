@@ -2,13 +2,13 @@
 
 Quick and Easy Recipes
 
-Short explanation of the project (1-2 sentences) - what is the goal of the project and/or main functionality?
 
+Clients are able to see recipes and recipe comments.  Clients are also able to delete recipes and add comments to recipes.
 
 
 ***Link to project hosted on Heroku***
 
-
+https://shrouded-headland-68167.herokuapp.com/
 
 Technologies Used:
 
