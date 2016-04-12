@@ -100,6 +100,7 @@ function handleErr(err) {
   console.log(err);
 }
 function handleRecivedCommentSubmit(data){
+  var commentId = $(this).parents('.comment-sections').data('comment-id');
   console.log("handleRecivedCommentSubmit got comments like..", data);
   renderComment(data);
 }
