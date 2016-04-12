@@ -1,12 +1,3 @@
-/*.jumbotron {
-background-image: url('http://tastykitchen.com/wp-content/themes/tastykitchen-v2/assets/img/submit-your-recipe.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: white;
-  height: auto;
-  width: auto;
-}*/
 .container {
   height: 200px;
 }
@@ -22,6 +13,9 @@ h1{
 }
 body{
   background-image: url('http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0282/7659/rchef_print_repeat_white_shop_thumb.png');
+  height: auto;
+  width: auto;
+  margin-bottom: auto;;
 }
 .inline-header {
   display: inline-block;
@@ -32,22 +26,22 @@ body{
   height: auto;
   width: auto;
 }
-.item {
+/*.item {
   height: 300px;
   width: 300px;
   text-align: center;
-}
+}*/
 span.date{
   color: grey;
   font-size: .8em;
 }
-.carousel-wrapper{
+/*.carousel-wrapper{
   margin-left: 475px;
   margin-right: 475px;
 }
 .carousel-inner img {
   margin: auto;
-}
+}*/
 .panel-footer  {
   height: 300px;
 }
