@@ -67,19 +67,6 @@ var recipeList =[
 ];
 
 
-var comment1 = {
-    userName: "Joanne",
-    date: "04/12/2016",
-    comment: "Hella good food!"
-};
-
-var comment2 = {
-    userName: "Travis",
-    date: "04/11/2016",
-    comment: "food is hella yummy!"
-};
-
-
 recipeList.forEach(function(element){
   element.comment = {};
   console.log("whats wrong??", element.comment);
@@ -91,7 +78,6 @@ db.Recipe.remove({}, function(err, recipes){
     if (err) { return console.log('ERROR', err); }
     console.log("all recipes:", recipes);
     console.log("created", recipes.length, "recipes");
-    // process.exit(); //stops seed from running
   });
 
 });
