@@ -26,3 +26,16 @@ What features does your racing game have? (bullet points)
 
 Planned Features:
 What changes would you make to your project if you continue to work on it? (bullet points)
+
+Sprint 1:
+- As a user I am able to add a new recipe with a form with a submit button.
+- As a user I am able to view all recipe's on the page.
+
+Sprint 2:
+- As a user I am able to delete a recipe that was created with the delete button.
+
+Sprint 3:
+- As a user I am able to view and add comments when view & add comment button is clicked.
+
+Sprint 4:
+- As a user I am able to update a created recipe with the update button.
