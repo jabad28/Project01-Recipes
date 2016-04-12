@@ -1,245 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-
-    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/styles.css">
-
-    <!-- VENDOR SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-
-    <!-- APPLICATION SCRIPTS -->
-    <script src="../scripts/app.js"></script>
-  </head>
-  <body>
+   <head>
+      <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- STYLESHEETS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../styles/styles.css">
+      <!-- VENDOR SCRIPTS -->
+      <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+      <!-- APPLICATION SCRIPTS -->
+      <script src="../scripts/app.js"></script>
+   </head>
+   <body>
       <div class="container">
-        <div>
-          <h1>Quick and Easy Recipes</h1>
-        </div>
-      </div>
-
-
-     <section class="container">
-       <div class="row">
-         <div class="col-md-10 col-md-offset-1">
+         <div>
+            <h1>Quick and Easy Recipes</h1>
          </div>
-       </div>
-       <!-- recipe! -->
-       <div id='recipes'>
+      </div>
+      <section class="container">
+         <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+            </div>
+         </div>
+         <!-- recipe! -->
+         <div id='recipes'>
+            <script id="recipeTemplate" type="text/x-handlebars-template">
+               <!-- one recipe -->
+               <div class="row recipe">
+                 <div class="row recipe" data-recipe-id="{{_id}}">
+                 <div class="col-md-10 col-md-offset-1">
+                   <!-- <div class="panel panel-default"> -->
+                     <div class="panel-body">
 
 
-         <script id="recipeTemplate" type="text/x-handlebars-template">
-           <!-- one recipe -->
-           <div class="row recipe">
-             <div class="row recipe" data-recipe-id="{{_id}}">
-             <div class="col-md-10 col-md-offset-1">
-               <!-- <div class="panel panel-default"> -->
-                 <div class="panel-body">
+                     <!-- begin recipe internal row -->
+                       <div class='row'>
+                         </div>
+
+                         <div class="col-md-9 col-xs-12" id="recipeBox">
+                           <ul class="list-group">
+                             <li class="list-group-item">
+                               <h4 class='inline-header'>Recipe Name:</h4>
+                               <span class='recipe-name'>{{recipeName}}</span>
+                             </li>
+
+                             <li class="list-group-item">
+                               <h4 class='inline-header'>Ingredients:</h4>
+                               <span class='ingredients-list'><div>{{ingredients}}</div></span>
+                             </li>
+
+                             <li class="list-group-item">
+                               <h4 class='inline-header'>Directions:</h4>
+                               <span class='directions-list'><div>{{directions}}</div></span>
+                             </li>
+
+                             <li class="list-group-item">
+                               <h4 class='inline-header'>Made By:</h4>
+                               <span class='madeBy-name'>{{madeBy}}</span>
+                             </li>
+
+                             <li class="list-group-item comment-section">
+                               <h4 class='inline-header'>Comments:</h4>
+                               <!-- {{#each comments}} -->
+                               <div class="text-left">
+                                   <span class='userName'>{{userName}}</span>
+                                   <div>
+                                 <p class='comments'>{{comment}}</p>
+                                 <span class='date'>posted on "{{date}}"</span></div>
+                               </div>
+                               <!-- {{/each}} -->
+                             </li>
+
+                           </ul>
+                         </div>
+
+                         <button class='btn btn-primary edit-recipe'>Update Recipe</button>
+                         <button class='btn btn-danger delete-recipe'>Delete Recipe</button>
+
+                       </div>
+                       <!-- end of recipe internal row -->
+                       <div class='panel-footer'>
+
+                         <div class='row'>
+                          <div class='col-md-8'>
 
 
-                 <!-- begin recipe internal row -->
-                   <div class='row'>
-                     </div>
+                            <!--   END FORM SAMPLE -->
 
-                     <div class="col-md-9 col-xs-12" id="recipeBox">
-                       <ul class="list-group">
-                         <li class="list-group-item">
-                           <h4 class='inline-header'>Recipe Name:</h4>
-                           <span class='recipe-name'>{{recipeName}}</span>
-                         </li>
+                            <section class="container comment-form">
+                              <div class="row">
+                              <div class="col-md-10 col-md-offset-1">
+                                <form class="form-horizontal" data-recipe-id="{{_id}}">
+                                  <fieldset>
 
-                         <li class="list-group-item">
-                           <h4 class='inline-header'>Ingredients:</h4>
-                           <span class='ingredients-list'><div>{{ingredients}}</div></span>
-                         </li>
+                                    <!-- Form Name -->
+                                    <legend>Add Comments</legend>
 
-                         <li class="list-group-item">
-                           <h4 class='inline-header'>Directions:</h4>
-                           <span class='directions-list'><div>{{directions}}</div></span>
-                         </li>
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="userName">Name</label>
+                                      <div class="col-md-4">
+                                      <input id="userName" name="userName" type="text" placeholder="First and Last" class="form-control input-md" required="">
+                                      </div>
+                                    </div>
 
-                         <li class="list-group-item">
-                           <h4 class='inline-header'>Made By:</h4>
-                           <span class='madeBy-name'>{{madeBy}}</span>
-                         </li>
+                                    <!-- Textarea -->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="date">Date</label>
+                                      <div class="col-md-4">
+                                      <input id="date" name="date" type="text" placeholder="Month/Day/Year" class="form-control input-md" required="">
 
-                         <li class="list-group-item comment-section">
-                           <h4 class='inline-header'>Comments:</h4>
-                           <!-- {{#each comments}} -->
-                           <div class="text-left">
-                               <span class='userName'>{{userName}}</span>
-                               <div>
-                             <p class='comments'>{{comment}}</p>
-                             <span class='date'>posted on "{{date}}"</span></div>
-                           </div>
-                           <!-- {{/each}} -->
-                         </li>
+                                      </div>
+                                    </div>
 
-                       </ul>
-                     </div>
+                                    <!-- Textarea -->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="comment">Comments</label>
+                                      <div class="col-md-4">
+                                        <textarea class="form-control" id="comment" name="comment"></textarea>
+                                      </div>
+                                    </div>
 
-                     <button class='btn btn-primary edit-recipe'>Update Recipe</button>
-                     <button class='btn btn-danger delete-recipe'>Delete Recipe</button>
+                                    <!-- Button -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="singlebutton">Submit Comment</label>
+                                      <div class="col-md-4">
+                                        <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                </form>
+                              </div>
+                              </div>
+                            </section>
 
-                   </div>
-                   <!-- end of recipe internal row -->
-                   <div class='panel-footer'>
-
-                     <div class='row'>
-                      <div class='col-md-8'>
-
-
-                        <!--   END FORM SAMPLE -->
-
-                        <section class="container comment-form">
-                          <div class="row">
-                          <div class="col-md-10 col-md-offset-1">
-                            <form class="form-horizontal" data-recipe-id="{{_id}}">
-                              <fieldset>
-
-                                <!-- Form Name -->
-                                <legend>Add Comments</legend>
-
-                                <!-- Text input-->
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="userName">Name</label>
-                                  <div class="col-md-4">
-                                  <input id="userName" name="userName" type="text" placeholder="First and Last" class="form-control input-md" required="">
-                                  </div>
-                                </div>
-
-                                <!-- Textarea -->
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="date">Date</label>
-                                  <div class="col-md-4">
-                                  <input id="date" name="date" type="text" placeholder="Month/Day/Year" class="form-control input-md" required="">
-
-                                  </div>
-                                </div>
-
-                                <!-- Textarea -->
-                                <div class="form-group">
-                                  <label class="col-md-4 control-label" for="comment">Comments</label>
-                                  <div class="col-md-4">
-                                    <textarea class="form-control" id="comment" name="comment"></textarea>
-                                  </div>
-                                </div>
-
-                                <!-- Button -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="singlebutton">Submit Comment</label>
-                                  <div class="col-md-4">
-                                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
-                                  </div>
-                                </div>
-                              </fieldset>
-                            </form>
                           </div>
-                          </div>
-                        </section>
+                         </div>
+                       </div>
 
-                      </div>
                      </div>
                    </div>
-
                  </div>
-               </div>
-             </div>
-           </div>
-           <!-- end one recipe -->
+         </div>
+         <!-- end one recipe -->
          </script>
-
-
-              <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                  <div class="panel-body">
-
-
-           <!-- BEGIN FORM SAMPLE -->
-           <section id='recipe-form' class="container comment-form">
-             <div class="row">
-             <div class="col-md-10 col-md-offset-1">
-               <form class="form-horizontal">
-                 <fieldset>
-
-                   <!-- Form Name -->
-                   <legend>Add New Recipe</legend>
-
-                   <!-- Text input-->
-                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="name">Recipe Name</label>
-                     <div class="col-md-4">
-                     <input id="name" name="recipeName" type="text" placeholder="" class="form-control input-md" required="">
-
+         <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+               <div class="panel-body">
+                  <!-- BEGIN FORM SAMPLE -->
+                  <section id='recipe-form' class="container comment-form">
+                     <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                           <form class="form-horizontal">
+                              <fieldset>
+                                 <!-- Form Name -->
+                                 <legend>Add New Recipe</legend>
+                                 <!-- Text input-->
+                                 <div class="form-group">
+                                    <label class="col-md-4 control-label" for="name">Recipe Name</label>
+                                    <div class="col-md-4">
+                                       <input id="name" name="recipeName" type="text" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                 </div>
+                                 <!-- Text input-->
+                                 <div class="form-group">
+                                    <label class="col-md-4 control-label" for="ingredients">Ingredients</label>
+                                    <div class="col-md-4">
+                                       <textarea class="form-control" id="ingredients" name="ingredients"></textarea>
+                                    </div>
+                                 </div>
+                                 <!-- Textarea -->
+                                 <div class="form-group">
+                                    <label class="col-md-4 control-label" for="directions">Directions</label>
+                                    <div class="col-md-4">
+                                       <textarea class="form-control" id="directions" name="directions"></textarea>
+                                    </div>
+                                 </div>
+                                 <!-- Textarea -->
+                                 <div class="form-group">
+                                    <label class="col-md-4 control-label" for="madeBy">Made By</label>
+                                    <div class="col-md-4">
+                                       <input id="name" name="madeBy" type="text" placeholder="" class="form-control input-md" required="">
+                                    </div>
+                                 </div>
+                                 <!-- Button -->
+                                 <div class="form-group">
+                                    <label class="col-md-4 control-label" for="singlebutton">Save Recipe</label>
+                                    <div class="col-md-4">
+                                       <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                                    </div>
+                                 </div>
+                              </fieldset>
+                           </form>
+                        </div>
                      </div>
-                   </div>
-
-                   <!-- Text input-->
-
-                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="ingredients">Ingredients</label>
-                     <div class="col-md-4">
-                       <textarea class="form-control" id="ingredients" name="ingredients"></textarea>
-                     </div>
-                   </div>
-
-                   <!-- Textarea -->
-                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="directions">Directions</label>
-                     <div class="col-md-4">
-                       <textarea class="form-control" id="directions" name="directions"></textarea>
-                     </div>
-                   </div>
-
-                   <!-- Textarea -->
-                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="madeBy">Made By</label>
-                     <div class="col-md-4">
-                     <input id="name" name="madeBy" type="text" placeholder="" class="form-control input-md" required="">
-
-                     </div>
-                   </div>
-
-                   <!-- Button -->
-                   <div class="form-group">
-                     <label class="col-md-4 control-label" for="singlebutton">Save Recipe</label>
-                     <div class="col-md-4">
-                       <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
-                     </div>
-                   </div>
-                 </fieldset>
-               </form>
-             </div>
-             </div>
-           </section>
-
-     </div>
-   </div>
- </div>
-</div>
-
-
-       </div>
-     </section>
-
-     <!-- comment template -->
-     <script id="commentTemplate" type="text/x-handlebars-template">
-       <div class="text-left">
-           <span class='userName'>{{userName}}</span>
-           <div>
-         <p class='comments'>{{comment}}</p>
-         <span class='date'>posted on "{{date}}"</span></div>
-       </div>
-     </script>
-
-  </body>
+                  </section>
+               </div>
+            </div>
+         </div>
+         </div>
+         </div>
+      </section>
+      <!-- comment template -->
+      <script id="commentTemplate" type="text/x-handlebars-template">
+         <div class="text-left">
+             <span class='userName'>{{userName}}</span>
+             <div>
+           <p class='comments'>{{comment}}</p>
+           <span class='date'>posted on "{{date}}"</span></div>
+         </div>
+      </script>
+   </body>
 </html>
