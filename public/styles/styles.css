@@ -10,6 +10,16 @@ background-image: url('http://tastykitchen.com/wp-content/themes/tastykitchen-v2
 .container {
   height: 200px;
 }
+head {
+  font-family: 'Bree Serif', serif;
+}
+h1{
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+  font-size: 100px;
+  height: auto;
+  width: auto;
+}
 body{
   background-image: url('http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0282/7659/rchef_print_repeat_white_shop_thumb.png');
 }
@@ -25,9 +35,6 @@ body{
 .item {
   height: 300px;
   width: 300px;
-  text-align: center;
-}
-h1{
   text-align: center;
 }
 span.date{
