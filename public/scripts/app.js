@@ -8,7 +8,6 @@ $(document).ready(function() {
     method: 'GET',
     url: '/api/recipe',
     success: handleReceivedAllRecipes,
-    // error: handleReceivedAllRecipesError
   });
 
   function handleRecipeSubmit(e){
@@ -37,7 +36,7 @@ $(document).ready(function() {
 });//ends doc.ready
 
 
-// when the update button for an recipe is clicked
+// when the update button for a recipe is clicked
 function handleRecipeEditClick(e) {
   e.preventDefault();
   var recipeId = $(this).closest('.recipe').data('recipe-id');
@@ -96,7 +95,6 @@ function handleCommentSubmit(event){
   $(this).trigger('reset');
 }
 
-
 function handleErr(err) {
   console.log(err);
 }
@@ -104,7 +102,6 @@ function handleRecivedCommentSubmit(data){
   console.log("handleRecivedCommentSubmit got comments like..", data);
   renderComment(data);
 }
-
 
 // this function takes a single comment and renders it to the page
 function renderComment(comment) {

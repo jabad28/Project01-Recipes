@@ -26,22 +26,10 @@ body{
   height: auto;
   width: auto;
 }
-/*.item {
-  height: 300px;
-  width: 300px;
-  text-align: center;
-}*/
 span.date{
   color: grey;
   font-size: .8em;
 }
-/*.carousel-wrapper{
-  margin-left: 475px;
-  margin-right: 475px;
-}
-.carousel-inner img {
-  margin: auto;
-}*/
 .panel-footer  {
   height: 300px;
 }
