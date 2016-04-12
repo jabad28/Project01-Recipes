@@ -10,7 +10,9 @@ background-image: url('http://tastykitchen.com/wp-content/themes/tastykitchen-v2
 .container {
   height: 200px;
 }
-
+body{
+  background-image: url('http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0282/7659/rchef_print_repeat_white_shop_thumb.png');
+}
 .inline-header {
   display: inline-block;
   vertical-align: baseline;
