@@ -106,30 +106,6 @@ function handleRecivedCommentSubmit(data){
 }
 
 
-// app.post('/api/recipe/:recipe/comment', function (req, res) {
-//   var recipeId = req.params.recipe;
-//   db.Recipe.findById(recipeId)
-//     .populate('comment')
-//
-//     .exec(function(err, foundRecipe) {
-//       console.log(foundRecipe);
-//       if (err) {
-//         res.status(500).json({error: err.message});
-//       } else {
-//         foundRecipe.comments.push(req.body);
-//         foundRecipe.save();
-//         res.status(201).json(foundRecipe);
-//       }
-//     }
-//   );
-// });
-
-
-// var templateHtml = $('#recipeTemplate').html();
-// var templateFun = Handlebars.compile(templateHtml);
-// var newHtml= templateFun(recipe);
-// $('#recipes').append(newHtml);
-
 // this function takes a single comment and renders it to the page
 function renderComment(comment) {
   console.log('rendering comments', comment);
