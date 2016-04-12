@@ -25,14 +25,14 @@ var recipeList =[
                 recipeName: 'Italian Chicken Bake',
                 ingredients:  [
                               '3-4 Boneless skinless chicken breasts',
-                              '1-2 Roma tomatoes cut into 1/2″ thick slices',
+                              '1-2 Roma tomatoes cut into ½″ thick slices',
                               '4-6 Tablespoons Prepared Pesto Sauce',
                               '1 Cup Mozzarella or Italian blend cheese'
                             ],
                 directions: [
                               'Trim chicken breast and lay them in a glass baking dish.',
                               'Spread 1-2 tablespoons of pesto on top side of chicken.',
-                              'Slice roma tomatoes into 1/2″ thick slices and lay on top of pesto.',
+                              'Slice roma tomatoes into ½″ thick slices and lay on top of pesto.',
                               'Sprinkle mozzarella or Italian blend cheese over the whole thing.',
                               'Bake at 400˚F for 30-40 minutes or until the juices run clear.'
                             ],
