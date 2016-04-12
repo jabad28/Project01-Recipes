@@ -1,9 +1,11 @@
 .jumbotron {
-background-image: url('http://www.sparklebox.co.uk/topic/world-around-us/food/recipes/wpimages/wp9ea2f862_05_06.jpg');
+background-image: url('http://tastykitchen.com/wp-content/themes/tastykitchen-v2/assets/img/submit-your-recipe.png');
   background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  align-items: center;
-  /*color: #EEE;*/
+  background-color: white;
+  height: auto;
+  width: auto;
 }
 .container {
   height: 200px;
@@ -26,23 +28,17 @@ background-image: url('http://www.sparklebox.co.uk/topic/world-around-us/food/re
 h1{
   text-align: center;
 }
-/*p.comments {
-  width: 200px;
-  height: 100px;
-}*/
 span.date{
   color: grey;
   font-size: .8em;
 }
 .carousel-wrapper{
-  align: center;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 475px;
+  margin-right: 475px;
 }
 .carousel-inner img {
   margin: auto;
 }
-
 .panel-footer  {
   height: 300px;
 }
