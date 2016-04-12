@@ -6,15 +6,16 @@ var db = require('../models');
 // GET /api/recipe
 function index(req, res) {
   db.Recipe.find({}, function(err, foundRecipes){
-      console.log("this is one recipe: ", foundRecipes);
+      // console.log("this is one recipe: ", foundRecipes);
       res.json(foundRecipes);
   });
+
 }
 
 function create(req, res) {
   // console.log('body', req.body);
   db.Recipe.create(req.body, function(err, createdRecipe){
-    console.log('createdrecipe look at this', createdRecipe);
+    console.log('createdrecipe llok at this', createdRecipe);
     res.json(createdRecipe);
   });
 
@@ -23,7 +24,7 @@ function create(req, res) {
 function show(req, res) {
     db.Recipe.findById(req.params.Id, function(err, foundRecipe) {
       if(err) { console.log('recipesController.show error', err); }
-      console.log('recipesController.show responding with', foundRecipe);
+      // console.log('recipesController.show responding with', foundRecipe);
       res.json(foundRecipe);
     });
 }
