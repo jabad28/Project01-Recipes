@@ -9,7 +9,6 @@ function index(req, res) {
       // console.log("this is one recipe: ", foundRecipes);
       res.json(foundRecipes);
   });
-
 }
 
 function create(req, res) {
@@ -18,7 +17,6 @@ function create(req, res) {
     console.log('createdrecipe llok at this', createdRecipe);
     res.json(createdRecipe);
   });
-
 }
 
 function show(req, res) {
