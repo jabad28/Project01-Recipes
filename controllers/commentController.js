@@ -1,4 +1,4 @@
-// nbdb, you should really name controllers with plural names - commentsController
+
 var db = require('../models');
 
 
@@ -11,6 +11,7 @@ function index(req, res) {
 
 
 function create(req, res) {
+  // this needs to be tied to the recipe it's created on or we can't find it!
   db.Comment.create(req.body, function(err, createdComment){
     console.log('createdComment look at this comment', createdComment);
     res.json(createdComment);
@@ -19,11 +20,10 @@ function create(req, res) {
 
 
 function show(req, res) {
-  // fixing indentation here
-  db.Comment.findById(req.params.Id, function(err, foundComment) {
-    if(err) { console.log('commentController.show error', err); }
-    res.json(foundComment);
-  });
+    db.Comment.findById(req.params.Id, function(err, foundComment) {
+      if(err) { console.log('commentController.show error', err); }
+      res.json(foundComment);
+    });
 }
 
 
@@ -32,4 +32,4 @@ function show(req, res) {
     index: index,
     create: create,
     show: show
-  };  // good, you only export things you have written!
+  };
