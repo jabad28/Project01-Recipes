@@ -87,9 +87,9 @@ function handleCommentSubmit(event){
 
   $.ajax({
     method: 'POST',
-    url: '/api/recipes/:recipeId/comment',
+    url: '/api/recipes/:recipeId/comment', // :recipeId needs to be filled in with the recipe ID!
     data: formData,
-    success: handleRecivedCommentSubmit,
+    success: handleReceivedCommentSubmit,
     error: handleErr
   });
   $(this).trigger('reset');
@@ -98,7 +98,7 @@ function handleCommentSubmit(event){
 function handleErr(err) {
   console.log(err);
 }
-function handleRecivedCommentSubmit(data){
+function handleReceivedCommentSubmit(data){
   console.log("handleRecivedCommentSubmit got comments like..", data);
   renderComment(data);
 }
@@ -110,5 +110,5 @@ function renderComment(comment) {
   var addComments = Handlebars.compile(templateComment);
   var newComment= addComments(comment);
   console.log(newComment);
-  $('.comment-section').append(newComment);
+  $('.comment-section').append(newComment);  // close, but you'll need to tell it which recipe to find the .comment-section in.
 }

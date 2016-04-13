@@ -1,4 +1,4 @@
-
+// nbdb, you should really name controllers with plural names - commentsController
 var db = require('../models');
 
 
@@ -32,4 +32,4 @@ function show(req, res) {
     index: index,
     create: create,
     show: show
-  };
+  };  // good, you only export things you have written!
