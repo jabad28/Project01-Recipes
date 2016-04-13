@@ -3,9 +3,9 @@ var Schema = mongoose.Schema;
 
 
 var CommentSchema = new Schema ({
-    userName: String,
-    date: String,
-    comment: String
+  userName: String,
+  date: String,
+  comment: String
 });
 
 var Comment = mongoose.model('Comment', CommentSchema);
