@@ -10,7 +10,7 @@ var RecipeSchema = new Schema ({
   ingredients: [ String ],
   directions: [ String ],
   madeBy: String,
-  comment: [Comment.schema]
+  comment: [Comment.schema]  // this should be called comments (plural)
 });
 
 var Recipe = mongoose.model('Recipe', RecipeSchema);

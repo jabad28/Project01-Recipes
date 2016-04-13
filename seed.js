@@ -66,9 +66,20 @@ var recipeList =[
                 }
 ];
 
+var sampleComment1 = {
+  userName: 'Joanne',
+  date: "Nov 1st, 2015",
+  comment: "Wow amazing recipe!"
+};
+
+var sampleComment2 = {
+  userName: 'tgaff',
+  date: "Mar 2nd, 2016",
+  comment: "I tried this one and it came out great!"
+};
 
 recipeList.forEach(function(element){
-  element.comment = {};
+  element.comment = [sampleComment1, sampleComment2];
   console.log("whats wrong??", element.comment);
 });
 
