@@ -19,10 +19,11 @@ function create(req, res) {
 
 
 function show(req, res) {
-    db.Comment.findById(req.params.Id, function(err, foundComment) {
-      if(err) { console.log('commentController.show error', err); }
-      res.json(foundComment);
-    });
+  // fixing indentation here
+  db.Comment.findById(req.params.Id, function(err, foundComment) {
+    if(err) { console.log('commentController.show error', err); }
+    res.json(foundComment);
+  });
 }
 
 
