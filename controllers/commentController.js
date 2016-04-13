@@ -11,6 +11,7 @@ function index(req, res) {
 
 
 function create(req, res) {
+  // this needs to be tied to the recipe it's created on or we can't find it!
   db.Comment.create(req.body, function(err, createdComment){
     console.log('createdComment look at this comment', createdComment);
     res.json(createdComment);

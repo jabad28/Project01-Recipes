@@ -42,6 +42,7 @@ app.get('/', function homepage (req, res) {
 
 app.get('/api', controllers.api.index);
 app.get('/api/recipe', controllers.recipe.index);
+// nbdb it would be better to use lower-case here e.g.  /api/recipe/:recipeId
 app.get('/api/recipe/:RecipeId', controllers.recipe.show);
 app.post('/api/recipe', controllers.recipe.create);
 app.delete('/api/recipe/:RecipeId', controllers.recipe.destroy);
