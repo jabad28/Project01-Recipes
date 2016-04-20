@@ -32,6 +32,10 @@ $(document).ready(function() {
   $('#recipe-form form').on('submit', handleRecipeSubmit);
   $('#recipes').on('click', '.delete-recipe', handleDeleteRecipeClick);
   $('#recipes').on('click', '.edit-recipe', handleRecipeEditClick);
+  $('#updateRecipesForm').on('submit', '.save-recipe', handleSaveChangesClick);
+
+  // $('#addComments').on('submit', '.save-comment', handleAddCommentsSubmit);
+  $('#commentsForm form').on('submit', handleRecivedCommentSubmit);
 
 });//ends doc.ready
 
@@ -42,6 +46,41 @@ function handleRecipeEditClick(e) {
   var recipeId = $(this).closest('.recipe').data('recipe-id');
   console.log('edit recipes', recipeId);
 }
+
+
+
+function handleSaveChangesClick(e) {
+  var recipeId = $(this).closest('.recipe').data('recipe-id');
+  var $recipeRow = $('[data-recipe-id=' + recipeId + ']');
+
+  var data = {
+    recipeName: $recipeRow.find('.edit-recipe-recipeName').val(),
+    ingredients: $recipeRow.find('.edit-recipe-ingredients').val(),
+    directions: $recipeRow.find('.edit-recipe-directions').val()
+  };
+
+  console.log('PUTing data for recipe', recipeId, 'with data', data);
+
+  $.ajax({
+    method: 'PUT',
+    url: '/api/recipe/' + recipeId,
+    data: data,
+    success: handleRecipeUpdatedResponse
+  });
+}
+
+function handleRecipeUpdatedResponse(data) {
+  console.log('response to update', data);
+
+  var recipeId = data._id;
+  console.log('the id of the recipe is', data._id);
+  // scratch this recipe from the page
+  $('[data-recipe-id=' + recipeId + ']').remove();
+  // and then re-draw it with the updates ;-)
+  renderRecipe(data);
+}
+
+
 
 // when a delete button for an recipe is clicked
 function handleDeleteRecipeClick(e) {

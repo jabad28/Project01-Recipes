@@ -1,16 +1,14 @@
 # Project01-Recipes
 
-Quick and Easy Recipes
-
+###Quick and Easy Recipes
 
 Clients are able to see recipes and recipe comments.  Clients are also able to delete recipes and add comments to recipes.
 
 
 ***Link to project hosted on Heroku***
+https://safe-taiga-84155.herokuapp.com/
 
-https://shrouded-headland-68167.herokuapp.com/
-
-Technologies Used:
+##Technologies Used:
 
 -jQuery
 -AJAX
@@ -19,7 +17,7 @@ Technologies Used:
 -MongoDB
 -Heroku
 
-Existing Features:
+##Existing Features:
 
 -Read Recipes
 -Submit New Recipes
@@ -27,7 +25,7 @@ Existing Features:
 -Read Comments
 -Submit Comments
 
-Planned Features:
+##Planned Features:
 
 Sprint 1:
 - As a user I am able to add a new recipe with a form with a submit button.
