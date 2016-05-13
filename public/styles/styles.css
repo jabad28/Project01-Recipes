@@ -26,13 +26,33 @@ body{
   height: auto;
   width: auto;
 }
+#commentTemplate{
+  height: auto;
+  width: auto;
+
+}
 span.date{
   color: grey;
   font-size: .8em;
 }
 .panel-footer  {
-  height: 300px;
+  width: 800px;
 }
 .list-group{
+  width: 800px;
+}
+.hidden {
+  display: none;
+}
+input {
+    width: 100%;
+}
+span.edit {
+    overflow: hidden;
+    padding-right:10px;
+    width: 400px;
+    height: 400px;
+}
+.panel-default{
   width: 800px;
 }
